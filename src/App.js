@@ -1,12 +1,22 @@
-import './main.scss';
-import './nav.scss'; 
-import HttpGet from './work/HttpGet';
-import MainPage from './work/MainPage'; 
+import MainPage from './pages/MainPage'; 
+import { Routes, Route } from "react-router-dom";
+import Cars from './pages/Cars';
+import PurchaseCar from './pages/PurchaseCar';
 
 function App() {
   return (
     <div>
-      <MainPage/>
+
+      <Routes>
+
+        <Route path="/Cudil-Car/" element={<MainPage />} /> 
+
+        <Route path="/Cudil-Car/Cars" element={<Cars />} />  
+
+        <Route path="/Cudil-Car/Purchase-Car/:model/:color/:rims/:paint/" element={<PurchaseCar />} /> 
+
+      </Routes> 
+
     </div>
   );
 }

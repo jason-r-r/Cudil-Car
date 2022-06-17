@@ -1,0 +1,111 @@
+$title-font: 'Orbitron', sans-serif; 
+$sub-text: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+
+$main-color: rgb(8, 8, 8); 
+$secondary-color: rgb(139, 0, 0); 
+
+.center {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+
+.main-bottom-nav {
+    width: 100%; 
+    height: auto;
+    background-color: white;  
+    @extend .center; 
+    flex-direction: column;
+    color: rgb(100, 100, 100); 
+    padding: 70px 0px; 
+
+    .main-bottom-nav-grid-display {
+        width: 85%; 
+        height: auto; 
+        display: flex; 
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .main-bottom-nav-content {
+            flex-basis: calc(50% - 1em); 
+            text-align: left; 
+
+            h3 {
+                margin: 10px 0px;
+                font-family: sans-serif; 
+                font-size: 1em; 
+            }
+
+            #main-rec {
+                width: 100%; 
+                height: 1px; 
+                background-color: rgba(0, 0, 0, 0.3); 
+            }
+
+            ul {
+                display: inline-block; 
+                padding: 0px; 
+                width: 200px; 
+                    
+
+                span {
+                    margin: 10px 0px; 
+                    font-family: $sub-text; 
+                    font-size: 0.9em; 
+                    display: inline; 
+                    position: relative; 
+                    float: left; 
+                    margin-right: 55px;
+                    cursor: pointer; 
+
+                    &::after {
+                        content: '';
+                        position: absolute; 
+                        display: block;
+                        left: 0; 
+                        bottom: -2; 
+                        width: 0;
+                        height: 2px;
+                        background: rgba(0, 0, 0, 0.3);
+                        transition: width .3s;
+                    }       
+                        
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+            }                
+        }            
+    }
+
+    #main-terms {
+        width: 85%; 
+        font-size: 0.85em;
+        margin: 35px 0px; 
+        text-align: left; 
+        cursor: pointer; 
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .main-bottom-nav .main-bottom-nav-grid-display {
+        width: 80%; 
+    } 
+
+    .main-bottom-nav #main-terms {
+        width: 80%; 
+    }
+} 
+
+@media only screen and (min-width: 1700px) {
+    .main-bottom-nav #main-terms {
+        width: 70%; 
+    }
+} 
+
+@media only screen and (min-width: 2000px) {
+    .main-bottom-nav #main-terms {
+        width: 45%; 
+    }
+}

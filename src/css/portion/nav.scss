@@ -1,0 +1,179 @@
+
+$title-font: 'Orbitron', sans-serif; 
+$sub-text: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+
+$main-color: rgb(8, 8, 8); 
+$secondary-color: rgb(139, 0, 0); 
+
+
+.center {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+} 
+
+.nav-container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90%; 
+    height: 80px; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    
+    .nav-text {
+        display: none; 
+        width: auto; 
+        height: 100%; 
+        border-top: 2px solid rgba(0, 0, 0, 0); 
+        cursor: pointer; 
+        @extend .center; 
+        transition: all 750ms ease; 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.75); 
+            border-top: 2px solid white;
+        } 
+
+        a {
+            color: inherit;
+            text-decoration: none; 
+        }
+    }
+
+    .middle-text { 
+        // width: 65%; 
+        cursor: pointer; 
+        @extend .center; 
+        justify-content: space-between;
+        transition: all ease 750ms; 
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.75); 
+        } 
+
+        a {
+            color: inherit; 
+            text-decoration: none; 
+            font-size: 2.5em; 
+            font-weight: 500; 
+            font-family: $title-font; 
+        } 
+
+        input { 
+            outline: none; 
+            width: 75%; 
+            height: 40px; 
+            background-color: white; 
+            border: none; 
+            color: $main-color; 
+            padding: 0px 15px; 
+            font-size: 1em; 
+            border-radius: 2px; 
+            border-bottom: 2px solid white; 
+            transition: all ease 500ms; 
+
+            &:focus {
+                border-bottom: 2px solid $secondary-color; 
+            }
+
+            &::placeholder {
+                color: rgb(85, 85, 85); 
+            }
+        }
+    } 
+
+    
+    .nav-button {
+        width: 40px; 
+        height: 40px; 
+        border-radius: 100%; 
+        background-color: white; 
+        border: none; 
+        @extend .center; 
+        cursor: pointer; 
+        margin-right: 20px; 
+        transition: all 500ms ease; 
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.65); 
+        }
+
+        .nav-button-container {
+            width: 40px; 
+            height: 25px; 
+            @extend .center; 
+            justify-content: space-evenly;
+            flex-direction: column; 
+
+            .nav-button-rec {
+            width: 20px; 
+            height: 2px; 
+            background-color: rgb(50, 50, 50); 
+            }
+        } 
+    }
+
+    a {
+        z-index: 999; 
+        
+        .create-car-div {
+            width: 150px; 
+            height: auto; 
+            position: absolute; 
+            bottom: -50%; 
+            right: 0%; 
+            padding: 12px 30px; 
+            background-color: white; 
+            border-radius: 10px; 
+            color: $main-color; 
+            cursor: pointer; 
+            font-family: $sub-text; 
+            z-index: 999; 
+        }
+    }
+} 
+
+@media only screen and (max-width: 768px) {
+    .nav-container .middle-text {
+        margin: 0px; 
+    } 
+
+    .nav-container .nav-button {
+        margin: 0px; 
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .nav-container .nav-text {
+        display: flex; 
+        font-size: 1.15em; 
+    }
+
+    .nav-container .middle-text {
+        margin: 0px; 
+    }
+
+    .nav-container .nav-button {
+        margin: 0px; 
+    }
+
+    .nav-container {
+        align-items: center; 
+        // justify-content: space-evenly;
+    }
+} 
+
+@media only screen and (min-width: 1440px) {
+    .nav-container {
+        width: 75%; 
+    }
+} 
+
+@media only screen and (min-width: 2000px) {
+    .nav-container {
+        width: 55%; 
+    }
+}
